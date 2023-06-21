@@ -1,3 +1,4 @@
 #!/bin/bash
-nasm -f elf64 main.nasm && ld main.o -static -s -o main
+nasm -f elf64 main.nasm \
+    && cc main.o -static -s -o main -mno-red-zone -nostdlib
 
